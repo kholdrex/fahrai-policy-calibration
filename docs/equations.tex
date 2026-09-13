@@ -1,0 +1,52 @@
+% Mathematical source for the eight numbered equations of the review draft.
+% This is TeX source, not a MathType OLE document or a claim of compatibility.
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\begin{equation}
+\mathbb E_\pi[v]=\mathbb E_{H\sim D}\left[
+\sum_a\pi(a\mid H)\mathbb E[v(H,a,Y)\mid H,A=a]\right].
+\end{equation}
+\begin{equation}
+\pi(a\mid h)>0\ \Longrightarrow\ \mu(a\mid h)>0.
+\end{equation}
+This must hold for $D$-almost every learner state $h$ and every eligible action $a$.
+\begin{equation}
+\mathbb E_\pi[Y\mid S=s]-s=
+\mathbb E_\mu[Y\mid S=s]-s+
+\frac{\operatorname{Cov}_\mu(W,Y\mid S=s)}{\mathbb E_\mu[W\mid S=s]}.
+\end{equation}
+\begin{equation}
+L_\tau(d,y)=\tau d(1-y)+(1-\tau)(1-d)y,\quad 0<\tau<1.
+\end{equation}
+\begin{equation}
+\begin{gathered}
+(\widehat\alpha,\widehat\beta)=\underset{\alpha,\beta}{\operatorname{argmin}}
+\frac{\sum_i w_i\{\log[1+\exp(t_i)]-y_it_i\}}{\sum_iw_i},\\
+t_i=\alpha_{r_i}+\beta_{r_i}\operatorname{logit}(s_i),\qquad
+w_i=\frac{\pi(a_i\mid h_i)}{\mu(a_i\mid h_i)}.
+\end{gathered}
+\end{equation}
+The mathematical family requires $\beta_r>0$; the numerical experiment
+uses $\alpha_r\in[-15,15]$ and $\beta_r\in[0.001,10]$.
+\begin{equation}
+\widehat{\operatorname{ECE}}_\pi=
+\frac{\sum_j\left|\sum_iw_iI_{ij}(y_i-\widehat p_i)\right|}{\sum_iw_i}.
+\end{equation}
+\begin{equation}
+\begin{gathered}
+\Delta\operatorname{BS}_\pi=\mathbb E_\pi[(\widehat p-m)^2],\\
+\operatorname{Regret}_\tau=\mathbb E_\pi\left[
+|m-\tau|\,\mathbf 1\{\mathbf 1[\widehat p\ge\tau]\ne\mathbf 1[m\ge\tau]\}\right].
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+m(r,z,a)=z+(1-2a)\delta_r,\quad\delta_0=0.12,\quad\delta_1=0.06,\\
+S(r,z)=\sigma\{1.15\operatorname{logit}(z)+b_r\},\quad b_0=0.25,\quad b_1=-0.15.
+\end{gathered}
+\end{equation}
+Auxiliary definitions: $\sigma(x)=1/(1+\exp(-x))$,
+$\operatorname{logit}(s)=\log(s/(1-s))$,
+$n_{\mathrm{eff}}=(\sum_iw_i)^2/\sum_iw_i^2$.
+\end{document}
